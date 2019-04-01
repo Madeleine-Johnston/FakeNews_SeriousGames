@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//https://unity3d.com/learn/tutorials/projects/2d-ufo-tutorial/counting-collectables-and-displaying-score
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,9 +12,14 @@ public class ScoreController : MonoBehaviour
 
     public Text paraCountText;
     public Text followCountText;
+    public Text thoughtText;
 
     public int randParaInt;
     public int randFollowInt;
+
+    public Button thoughts;
+    public Button Accept;
+    public Button Decline;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +51,24 @@ public class ScoreController : MonoBehaviour
         followCountText.text = "Followers: " + followerCount.ToString();
     }
 
+    public void changeText(string words)
+    {
+        thoughtText.text = words;
+    }
+
+    public void changeButton()
+    {
+        thoughts.gameObject.SetActive(false);
+        Accept.gameObject.SetActive(true);
+        Decline.gameObject.SetActive(true);
+    }
+
+    public void changeButtonBack()
+    {
+        thoughts.gameObject.SetActive(false);
+        Decline.gameObject.SetActive(true);
+    }
+
     ////This function updates the text displaying the number of objects we've collected and displays our victory message if we've collected all of them.
     //void SetCountText()
     //{
@@ -57,15 +81,6 @@ public class ScoreController : MonoBehaviour
     //    //    //... then set the text property of our winText object to "You win!"
     //    //    winText.text = "You win!";
     //}
-
-    void update()
-    {
-
-    }
-
-
-
-
 
 
 }
