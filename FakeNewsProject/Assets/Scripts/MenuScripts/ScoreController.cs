@@ -37,7 +37,7 @@ public class ScoreController : MonoBehaviour
     }
 
     public void onClickPara() {
-        randParaInt = Random.Range(1, 50);
+        randParaInt = Random.Range(1, 5);
         paraCount = paraCount + randParaInt;
         Debug.Log("clicked" + paraCount);
         paraCountText.text = "Paranoia: " + paraCount.ToString();

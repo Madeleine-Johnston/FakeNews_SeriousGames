@@ -13,6 +13,24 @@ public class ObjInteraction : MonoBehaviour {
     void Start () {
         coll = GetComponent<Collider>();
     }
+
+    public void onClick()
+    {
+        if (click == false)
+        {
+            //laptopClick.SetActive(false);
+            laptopUI.SetActive(true);
+            click = true;
+        }
+        else
+        {
+            if (click == true)
+            {
+                laptopUI.SetActive(false);
+                click = false;
+            }
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
