@@ -21,6 +21,9 @@ public class ScoreController : MonoBehaviour
     public Button Accept;
     public Button Decline;
 
+    public Slider paranoia;
+    public Slider followers;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +35,6 @@ public class ScoreController : MonoBehaviour
         paraCountText.text = "Paranoia: " + paraCount;
         followCountText.text = "Followers: " + followerCount;
 
-        //Call our SetCountText function which will update the text with the current value for count.
-        //SetCountText();
     }
 
     public void onClickPara() {
@@ -61,6 +62,8 @@ public class ScoreController : MonoBehaviour
         thoughts.gameObject.SetActive(false);
         Accept.gameObject.SetActive(true);
         Decline.gameObject.SetActive(true);
+        paranoia.value = paraCount;
+        followers.value = followerCount;
     }
 
     public void changeButtonBack()
@@ -68,6 +71,12 @@ public class ScoreController : MonoBehaviour
         thoughts.gameObject.SetActive(false);
         Decline.gameObject.SetActive(true);
     }
+
+    //public void Update()
+    //{
+    //    paranoia.value = paraCount;
+    //    followers.value = followerCount;
+    //}
 
     ////This function updates the text displaying the number of objects we've collected and displays our victory message if we've collected all of them.
     //void SetCountText()

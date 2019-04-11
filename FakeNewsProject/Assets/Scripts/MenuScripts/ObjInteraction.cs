@@ -9,6 +9,16 @@ public class ObjInteraction : MonoBehaviour {
     public bool click = false;
     public GameObject laptopUI;
 
+    //public GameObject linkAna1;
+    //public GameObject linkAna2;
+    //public GameObject linkAna3;
+    //public GameObject linkAna4;
+    //public GameObject linkAna5;
+    //public GameObject linkAna6;
+    //public GameObject linkAna7;
+    //public GameObject linkAna8;
+
+
     // Use this for initialization
     void Start () {
         coll = GetComponent<Collider>();
@@ -47,6 +57,8 @@ public class ObjInteraction : MonoBehaviour {
                 laptopClick.SetActive(false);
                 laptopUI.SetActive(true);
                 click = true;
+                //linkAna1.SetActive(true);
+                //linkAna2.SetActive(true);
             }
         }
 
