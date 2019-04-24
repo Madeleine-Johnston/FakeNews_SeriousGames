@@ -33,7 +33,7 @@ public class LinkAnaBoardChanges : ObjInteraction
                 if (icon.Raycast(ray, out hit, 1000.0f))
                 {
                 image.SetActive(true);
-            }
+                }
 
         }
     }
