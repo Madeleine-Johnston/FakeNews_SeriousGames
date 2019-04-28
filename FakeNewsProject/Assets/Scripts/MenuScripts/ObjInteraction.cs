@@ -67,6 +67,15 @@ public class ObjInteraction : MonoBehaviour {
     {
         SceneManager.LoadScene("Level6");
     }
+    public void loadScene7()
+    {
+        SceneManager.LoadScene("Level7");
+    }
+    public void loadScene8()
+    {
+        SceneManager.LoadScene("Level8");
+    }
+
 
     // Update is called once per frame
     void Update () {

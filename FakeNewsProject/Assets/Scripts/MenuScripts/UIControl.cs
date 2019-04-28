@@ -2,37 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 //This class is used by any of the UI elements to run methods
 public class UIControl : MonoBehaviour 
 {
-	public AudioSource myClip;
+    private bool IsPointerOverUIObject()
+    {
 
-	//Quits the app
-	public void ChangeToOutro()
-	{
-		SceneManager.LoadScene("Outro");
-	}
-
-	public void ChangeToGameSceneStarts()
-	{
-		Invoke("ChangeToGameScene", 1.3f);
-	}
-
-	//Changes scene
-	public void ChangeToGameScene()
-	{
-		SceneManager.LoadScene("02");				
-	}
-	public void ChangeToMenuStarts()
-	{
-		Invoke("ChangeToMenu", 1.3f);
-	}
-
-	//Changes scene
-	public void ChangeToMenu()
-	{
-		SceneManager.LoadScene("01");				
-	}
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
+    }
 
 }
